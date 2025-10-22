@@ -35,6 +35,7 @@ const PRICE_DATA = {
     {"name":"Мытьё СВЧ изнутри","unit":"шт","price":{"Поддерживающая":500,"Генеральная":0,"После ремонта":0},"quantityInput":true},
     {"name":"Мытьё духовки изнутри","unit":"шт","price":{"Поддерживающая":500,"Генеральная":0,"После ремонта":0},"quantityInput":true},
     {"name":"Уборка на балконе","unit":"30 мин","price":{"Поддерживающая":500,"Генеральная":500,"После ремонта":500},"quantityInput":true},
+    {"name":"Мытье окон на балконе","unit":"шт","price":{"Поддерживающая":3000,"Генеральная":3000,"После ремонта":3000},"quantityInput":true},
     {"name":"Мытьё посуды","unit":"30 мин","price":{"Поддерживающая":500,"Генеральная":500,"После ремонта":500},"quantityInput":true},
     {"name":"Глажка","unit":"30 минут","price":{"Поддерживающая":400,"Генеральная":400,"После ремонта":400},"quantityInput":true},
     {"name":"Окна или балкон (комплекс)","unit":"комплекс","price":{"Поддерживающая":4500,"Генеральная":4500,"После ремонта":4500},"quantityInput":false},
@@ -85,6 +86,7 @@ export default function CleaningCalculator() {
 
   const total = basePrice + addonsTotal;
   const withDiscount = Math.round(total * 0.85);
+  const withReact = Math.round(total * 0.95);
 
   return (
     <div className="min-h-screen bg-white text-gray-900 p-6">
@@ -155,6 +157,10 @@ export default function CleaningCalculator() {
           <div className="flex justify-between text-sm opacity-80 mt-2">
             <div>Цена со скидкой 15%</div>
             <div>{withDiscount.toLocaleString()} ₽</div>
+          </div>
+          <div className="flex justify-between text-sm opacity-80 mt-2">
+            <div>Цена со скидкой 5%</div>
+            <div>{withReact.toLocaleString()} ₽</div>
           </div>
         </section>
 
