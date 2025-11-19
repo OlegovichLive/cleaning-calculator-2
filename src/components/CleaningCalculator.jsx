@@ -45,7 +45,7 @@ const PRICE_DATA = {
   ]
 };
 
-const TYPES = ["Поддерживающая", "Генеральная", "После ремонта"];
+const TYPES = ["Поддерживающая", "Генеральная", "Генеральная ЛАЙТ, ""После ремонта"];
 
 export default function CleaningCalculator() {
   const [type, setType] = useState(TYPES[0]);
